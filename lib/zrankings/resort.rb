@@ -62,6 +62,3 @@ class Zrankings::Resort
         @@all
     end
 end
-
-#r = Zrankings::Resort.new
-#binding.pry

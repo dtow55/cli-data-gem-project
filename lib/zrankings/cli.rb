@@ -5,7 +5,8 @@ require 'pry'
 class Zrankings::CLI
 
     def call
-        #scrape resort index
+        Zrankings::Scraper.new.create_resorts
+        
         run
     end
 

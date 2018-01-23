@@ -20,5 +20,3 @@ class Zrankings::Scraper
         Zrankings::Resort.all
     end
 end
-
-#Zrankings::Scraper.new.create_resorts
