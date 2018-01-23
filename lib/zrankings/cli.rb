@@ -6,7 +6,6 @@ class Zrankings::CLI
 
     def call
         #scrape resort index
-        Zrankings::Scraper.new.get_page
         run
     end
 

@@ -7,12 +7,10 @@ class Zrankings::Scraper
 
     def get_page
         doc = Nokogiri::HTML(open("https://www.zrankings.com/"))
-        binding.pry
-        #opens zrankings.com using open-uri and assigns it to a 'doc' variable using Nokogiri
     end
 
     def scrape_resorts
-        #calls #get_page and returns an array of XML objects from which we will scrape resorts
+        get_page.css("tbody.single-resort-cell")
     end
 
     def create_resorts
@@ -21,4 +19,4 @@ class Zrankings::Scraper
     end
 end
 
-Zrankings::Scraper.new.get_page
+Zrankings::Scraper.new.scrape_resorts
