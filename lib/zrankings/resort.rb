@@ -32,6 +32,10 @@ class Zrankings::Resort
         doc.css("div.snow-icon-2 h3").text
     end
 
+    def peak_elevation
+        doc.css("div#vertical-drop span").text
+    end
+
     def doc
         Nokogiri::HTML(open(self.url))
     end
