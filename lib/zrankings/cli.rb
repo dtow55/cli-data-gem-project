@@ -12,10 +12,20 @@ class Zrankings::CLI
 
     def run
         print_resort_list
-        #request input from user to select a resort to get more information on
-        #if input is 'exit', then quit; otherwise show more detail on requested resort
-        #after printing more detail, request input again to go back or exit
-        #if user inputs 'back' then call #run again
+        
+        input = request_input
+        
+        if input != "exit"
+            print_resort_detail(Zrankings::Resort.find_by_rank(input))
+            
+            puts "Type 'back' to return to resort list, or 'exit' to quit.".colorize(:light_blue)
+            
+            input_2 = gets.strip
+            
+            if input_2 == "back"
+                run
+            end
+        end
     end
 
     def print_resort_list
