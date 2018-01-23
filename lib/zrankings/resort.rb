@@ -7,4 +7,7 @@ def Zrankings::Resort
 
     @@all = []
 
+    def self.all
+        @@all
+    end
 end
