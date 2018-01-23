@@ -1,3 +1,4 @@
+require_relative '../zrankings.rb'
 require 'pry'
 
 def Zrankings::Resort
@@ -11,3 +12,6 @@ def Zrankings::Resort
         @@all
     end
 end
+
+r = Resort.new
+binding.pry
