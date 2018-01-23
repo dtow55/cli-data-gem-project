@@ -6,12 +6,12 @@ class Zrankings::CLI
 
     def call
         Zrankings::Scraper.new.create_resorts
-        
+
         run
     end
 
     def run
-        #print list of resorts
+        print_resort_list
         #request input from user to select a resort to get more information on
         #if input is 'exit', then quit; otherwise show more detail on requested resort
         #after printing more detail, request input again to go back or exit
@@ -19,7 +19,15 @@ class Zrankings::CLI
     end
 
     def print_resort_list
-        #prints resort index
+        puts ""
+        puts "------ ZRankings.com Top 30 North American Ski Resorts ------".colorize(:light_blue)
+        puts ""
+
+        Zrankings::Resort.all.each do |resort|
+            puts "  #{resort.rank}.  ".colorize(:light_blue) + "#{resort.name}, #{resort.location}"
+        end
+
+        puts ""
     end
 
     def request_input
