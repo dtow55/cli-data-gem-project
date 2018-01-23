@@ -23,5 +23,5 @@ class Zrankings::Resort
     end
 end
 
-r = Zrankings::Resort.new
-binding.pry
+#r = Zrankings::Resort.new
+#binding.pry
