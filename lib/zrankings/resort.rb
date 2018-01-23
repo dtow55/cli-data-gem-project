@@ -36,6 +36,14 @@ class Zrankings::Resort
         doc.css("div#vertical-drop span").text
     end
 
+    def vertical
+        doc.css("div#vertical-number h4").text
+    end
+    
+    def acres
+        doc.css("div.side-stats-2 span")[0].text
+    end
+
     def doc
         Nokogiri::HTML(open(self.url))
     end
