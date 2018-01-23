@@ -28,6 +28,14 @@ class Zrankings::Resort
         )
     end
 
+    def snowfall
+        doc.css("div.snow-icon-2 h3").text
+    end
+
+    def doc
+        Nokogiri::HTML(open(self.url))
+    end
+
     def self.all
         @@all
     end
