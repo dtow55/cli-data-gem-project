@@ -38,6 +38,20 @@ class Zrankings::CLI
     end
 
     def print_resort_detail(resort)
-        #prints more detail on a particular resort
+        puts ""
+        print "--------".colorize(:light_blue)
+        print " #{resort.name}, #{resort.location} "
+        print"--------".colorize(:light_blue)
+        puts ""
+        puts ""
+        puts "Rank: ".colorize(:light_blue) + "#{resort.rank}"
+        puts "Avg Annual Snowfall: ".colorize(:light_blue) + "#{resort.snowfall}"
+        puts "Peak Elevation: ".colorize(:light_blue) + "#{resort.peak_elevation}"
+        puts "Vertical Drop: ".colorize(:light_blue) + "#{resort.vertical}"
+        puts "Acreage: ".colorize(:light_blue) + "#{resort.acres}"
+        puts "Multipass: ".colorize(:light_blue) + "#{resort.multipass}"
+        puts ""
+        puts "Description:\n".colorize(:light_blue) + "#{resort.description}"
+        puts ""
     end
 end
