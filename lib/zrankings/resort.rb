@@ -58,6 +58,14 @@ class Zrankings::Resort
         Nokogiri::HTML(open(self.url))
     end
 
+    def self.find_by_rank(search_rank)
+        all.each do |resort|
+            if resort.rank == search_rank
+                return resort
+            end
+        end
+    end
+
     def self.all
         @@all
     end
