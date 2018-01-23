@@ -31,7 +31,10 @@ class Zrankings::CLI
     end
 
     def request_input
-        #requests input after resort index is printed
+        puts "Enter the number of the resort you would like to get " \
+        "more information on, or type 'exit' to quit.".colorize(:light_blue)
+
+        input = gets.strip
     end
 
     def print_resort_detail(resort)
