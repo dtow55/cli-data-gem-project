@@ -15,8 +15,9 @@ class Zrankings::Scraper
 
     def create_resorts
         scrape_resorts.each do |resort_xml|
-            Zrankings::Resort.create_from_xml(resort_xml)
+            Zrankings::Resort.new_from_xml(resort_xml)
         end
+        Zrankings::Resort.all
     end
 end
 

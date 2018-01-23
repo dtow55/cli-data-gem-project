@@ -18,7 +18,7 @@ class Zrankings::Resort
         @@all << self
     end
 
-    def self.create_from_xml(resort_xml)
+    def self.new_from_xml(resort_xml)
         self.new(
             resort_xml.css("td#name-rank-index a").text, #name
             resort_xml.css("span.desktop-700").text, #location
