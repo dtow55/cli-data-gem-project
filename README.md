@@ -1,8 +1,6 @@
 # Zrankings
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/zrankings`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Zrankings Top 30 Web Scraper gem. This gem scrapes the top 30 ski resorts on Zrankings.com and allows you to scrape additional information on a resort of choice. 
 
 ## Installation
 
@@ -22,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Usage instructions are clearly outlined in the program itself, but in summary: 
+1) Upon launch, the program will print a numbered list of the top 30 ranked ski resorts from Zrankings.com.
+2) You may either type the number of the resort you would like to learn more about or type 'exit' to quit the program.
+3) Upon typing a valid number, the program will list details on the ski resort of choice. It will also prompt you for more input
+4) You may either 'exit' like before, or type 'back' to return to the main menu, at which point you may repeat steps starting at #2 above.
 
 ## Development
 
