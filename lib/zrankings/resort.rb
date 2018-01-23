@@ -13,5 +13,5 @@ def Zrankings::Resort
     end
 end
 
-r = Resort.new
-binding.pry
+#r = Resort.new
+#binding.pry

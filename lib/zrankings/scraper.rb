@@ -1,3 +1,4 @@
+require_relative '../zrankings.rb'
 require 'pry'
 
 def Zrankings::Scraper
