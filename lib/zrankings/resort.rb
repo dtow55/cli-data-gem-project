@@ -1,7 +1,7 @@
 require_relative '../zrankings.rb'
 require 'pry'
 
-def Zrankings::Resort
+class Zrankings::Resort
 
     attr_accessor :name, :location, :url, :snowfall, :peak_elevation,
                 :vertical, :acres, :rank, :multipass, :description

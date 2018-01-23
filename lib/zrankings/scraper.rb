@@ -1,9 +1,13 @@
 require_relative '../zrankings.rb'
 require 'pry'
+require 'nokogiri'
+require 'open-uri'
 
-def Zrankings::Scraper
+class Zrankings::Scraper
 
     def get_page
+        doc = Nokogiri::HTML(open("https://www.zrankings.com/"))
+        binding.pry
         #opens zrankings.com using open-uri and assigns it to a 'doc' variable using Nokogiri
     end
 
@@ -16,3 +20,5 @@ def Zrankings::Scraper
         #scraped from Nokogiri XML
     end
 end
+
+Zrankings::Scraper.new.get_page
