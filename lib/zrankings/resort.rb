@@ -44,6 +44,16 @@ class Zrankings::Resort
         doc.css("div.side-stats-2 span")[0].text
     end
 
+    def multipass
+        exists = doc.css("div.show-skipass")
+        
+        if exists.size == 0
+            "None"
+        else
+            doc.css("div.show-skipass")[0].text
+        end
+    end
+
     def doc
         Nokogiri::HTML(open(self.url))
     end
