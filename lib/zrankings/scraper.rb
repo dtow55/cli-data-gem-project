@@ -1,8 +1,3 @@
-require_relative '../zrankings.rb'
-require 'pry'
-require 'nokogiri'
-require 'open-uri'
-
 class Zrankings::Scraper
 
     def get_page

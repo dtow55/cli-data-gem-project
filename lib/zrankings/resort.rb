@@ -1,7 +1,3 @@
-require_relative '../zrankings.rb'
-require_relative './version.rb'
-require 'pry'
-
 class Zrankings::Resort
 
     attr_accessor :name, :location, :url, :snowfall, :peak_elevation,

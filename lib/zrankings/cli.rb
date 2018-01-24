@@ -1,7 +1,3 @@
-require_relative '../zrankings.rb'
-require_relative './scraper.rb'
-require 'pry'
-
 class Zrankings::CLI
 
     def call
@@ -13,14 +9,29 @@ class Zrankings::CLI
     def run
         print_resort_list
         
-        input = request_input
-        
+        puts "Enter the number of the resort you would like to get " \
+        "more information on, or type 'exit' to quit.".colorize(:light_blue)
+
+        input = gets.strip  ##INPUT
+
+        # Invalid input handling
+        while !(input == 'exit' || input.to_i >= 1 && input.to_i <= 30)
+            puts "Input was invalid. Please try again."
+            input = gets.strip
+        end
+
         if input != "exit"
             print_resort_detail(Zrankings::Resort.find_by_rank(input))
             
             puts "Type 'back' to return to resort list, or 'exit' to quit.".colorize(:light_blue)
             
-            input_2 = gets.strip
+            input_2 = gets.strip  ##INPUT
+            
+            # Invalid input handling
+            while !(input_2 == 'exit' || input_2 == 'back')
+                puts "Input was invalid. Please try again."
+                input_2 = gets.strip
+            end
             
             if input_2 == "back"
                 run
@@ -38,13 +49,6 @@ class Zrankings::CLI
         end
 
         puts ""
-    end
-
-    def request_input
-        puts "Enter the number of the resort you would like to get " \
-        "more information on, or type 'exit' to quit.".colorize(:light_blue)
-
-        input = gets.strip
     end
 
     def print_resort_detail(resort)
